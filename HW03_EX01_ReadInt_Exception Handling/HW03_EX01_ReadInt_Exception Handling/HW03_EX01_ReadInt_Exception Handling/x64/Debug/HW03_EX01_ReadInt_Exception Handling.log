@@ -1,0 +1,16 @@
+﻿Build started 6/7/2016 4:23:56 PM.
+     1>Project "C:\Users\Elisha\Documents\GitHub\CS273_Data_Structures\HW03_EX01_ReadInt_Exception Handling\HW03_EX01_ReadInt_Exception Handling\HW03_EX01_ReadInt_Exception Handling.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt readint.cpp
+         readint.cpp
+     1>c:\users\elisha\documents\github\cs273_data_structures\hw03_ex01_readint_exception handling\hw03_ex01_readint_exception handling\readint.cpp(27): warning C4101: 'e': unreferenced local variable
+     1>c:\users\elisha\documents\github\cs273_data_structures\hw03_ex01_readint_exception handling\hw03_ex01_readint_exception handling\readint.cpp(32): warning C4101: 'ex': unreferenced local variable
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Elisha\Documents\GitHub\CS273_Data_Structures\HW03_EX01_ReadInt_Exception Handling\x64\Debug\HW03_EX01_ReadInt_Exception Handling.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Elisha\Documents\GitHub\CS273_Data_Structures\HW03_EX01_ReadInt_Exception Handling\x64\Debug\HW03_EX01_ReadInt_Exception Handling.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Elisha\Documents\GitHub\CS273_Data_Structures\HW03_EX01_ReadInt_Exception Handling\x64\Debug\HW03_EX01_ReadInt_Exception Handling.lib" /MACHINE:X64 x64\Debug\main.obj
+         x64\Debug\readint.obj
+         HW03_EX01_ReadInt_Exception Handling.vcxproj -> C:\Users\Elisha\Documents\GitHub\CS273_Data_Structures\HW03_EX01_ReadInt_Exception Handling\x64\Debug\HW03_EX01_ReadInt_Exception Handling.exe
+     1>Done Building Project "C:\Users\Elisha\Documents\GitHub\CS273_Data_Structures\HW03_EX01_ReadInt_Exception Handling\HW03_EX01_ReadInt_Exception Handling\HW03_EX01_ReadInt_Exception Handling.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.89
