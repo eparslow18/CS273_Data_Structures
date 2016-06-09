@@ -15,11 +15,11 @@ int main()
 	
 
 	try	{
-		cin.exceptions(ios::failbit | ios::badbit);//for cin catch below 
-		if (low >= high)//checking for empty range 
-		{
-			throw out_of_range("This is an empty range because the low is greater than the high integer. ");
-		}
+		//cin.exceptions(ios::failbit | ios::badbit);//for cin catch below 
+		//if (low >= high)//checking for empty range 
+		//{
+		//	throw out_of_range("This is an empty range because the low is greater than the high integer. ");
+		//}
 
 		int number = read_int("Please enter a number within the range: ", low, high); //goes into function in readint.cpp
 		cout << "You entered " << number << endl; 
