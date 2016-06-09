@@ -63,6 +63,11 @@ namespace UnitTester
 			Assert::AreEqual(isSquare(2, 2, 2, 2), true);
 		}
 
+		TEST_METHOD(SameNegativeNumbers) // Test case 1: all sides are zero
+		{
+			Assert::AreEqual(isSquare(-2, -2, -2, -2), false);
+		}
+
 		// Add your additional test cases here!
 
 	};
