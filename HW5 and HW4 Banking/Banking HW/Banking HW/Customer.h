@@ -68,6 +68,14 @@ public:
 		this->address = address;
 	}
 
+	std::string getCustType(std::string cust_type) { //for fees 
+		return cust_type;
+	}
+
+	std::string getAccountType(std::string account_type) {
+		return account_type;
+	}
+
 	virtual double CHECK_CHARGE() = 0;
 	virtual double CHECKING_INTEREST() = 0;
 	virtual double OVERDRAFT_PENALTY() = 0;

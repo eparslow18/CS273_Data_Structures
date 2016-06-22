@@ -32,10 +32,10 @@ private:
 	{
 		std::vector<int> user_accounts;
 
-		// FIXME: Find all the accounts belonging to a customer name and add it to the vector of account numbers.
+		//Find all the accounts belonging to a customer name and add it to the vector of account numbers.
 		for (int i = 0; i < accounts.size(); i++) {
 			if (accounts[i]->get_customer()->getName() == name) {
-				user_accounts.push_back(accounts[i]->get_account());
+				user_accounts.push_back(accounts[i]->get_account()); 
 			}
 		}
 
@@ -71,12 +71,12 @@ private:
 		account_id++;
 		if (account_type == "savings") {
 			std::cout << "Creating a savings\n";
-			acct = new Checking_Account(cust, account_id, 0);
+			acct = new Savings_Account(cust, account_id, 0);
 			
 		}
 
 		else if (account_type == "checking") {
-			std::cout << "creating a checking\n";
+			std::cout << "Creating a checking\n";
 			acct = new Checking_Account(cust, account_id, 0);
 		}
 
@@ -148,6 +148,7 @@ public:
 	{
 		Account *acct = get_account(acct_number);
 		if (acct) {
+			acct->deposit(amt);
 			// FIXME: Deposit the amt in the account
 			//use fuhnctions inside type accounts in account.h
 		}
@@ -162,6 +163,7 @@ public:
 	{
 		Account *acct = get_account(acct_number);
 		if (acct) {
+			acct->withdraw(amt);
 			// FIXME: Withdraw the amt from the account
 		}
 	}

@@ -74,7 +74,7 @@ public:
 	}
 
 	int get_account() {
-		account_number++;//generates an account number that doesn't match any other while in program 
+		
 		return account_number;
 	}
 
@@ -117,7 +117,9 @@ public:
 		std::string fees = get_fees();
 		Transaction *tran = NULL;
 
-		// FIXME: Create a Transaction object and assign it to transaction vector.
+		tran = new Transaction(account_number, "Deposit" , amt, fees);
+		
+		//Create a Transaction object and assign it to transaction vector.
 
 		transactions.push_back(tran);
 	}
@@ -131,7 +133,8 @@ public:
 		std::string fees = get_fees();
 		Transaction *tran = NULL;
 
-		// FIXME: Create a Transaction object and assign it to tran.
+		tran = new Transaction(account_number, "Withdraw", amt, fees);
+		// Create a Transaction object and assign it to tran.
 
 		transactions.push_back(tran);
 	}
@@ -156,6 +159,13 @@ public:
 class Savings_Account : public Account {
 public: 
 	Savings_Account(Customer *cust, int id, double balance) : Account(cust, id) { balance = 0; }
+
+	void add_interest() {
+
+	}
+	void deposit() {
+
+	}
 };
 
 #endif
