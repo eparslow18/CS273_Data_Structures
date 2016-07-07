@@ -68,11 +68,11 @@ public:
 		this->address = address;
 	}
 
-	std::string getCustType(std::string cust_type) { //for fees 
+	std::string getCustType() { //for fees 
 		return cust_type;
 	}
 
-	std::string getAccountType(std::string account_type) {
+	std::string getAccountType() {
 		return account_type;
 	}
 
@@ -87,17 +87,16 @@ public:
 	Adult(std::string name, std::string address,std::string telephone, int age, std::string cust_type, std::string account_type) :Customer(name, address, telephone, age, cust_type, account_type) {}
 	
 	double CHECKING_INTEREST() {//take amount in checking account and add interest of that amount. return balance
-
-		return NULL;
+		return .03;
 	}
 	double CHECK_CHARGE() {
-		return NULL;
+		return 3.0;
 	}
 	double OVERDRAFT_PENALTY() {
-		return NULL;
+		return 2.0;
 	}
 	double SAVINGS_INTEREST() {
-		return NULL;
+		return .06;
 	}
 };
 
@@ -106,16 +105,16 @@ public:
 	Student(std::string name, std::string address, std::string telephone, int age, std::string cust_type, std::string account_type) :Customer(name, address, telephone, age, cust_type, account_type) {}
 	
 	double CHECKING_INTEREST() {
-		return NULL;
+		return .1;
 	}
 	double CHECK_CHARGE() {
-		return NULL;
+		return 1.0;
 	}
 	double OVERDRAFT_PENALTY() {
-		return NULL;
+		return 1.0;
 	}
 	double SAVINGS_INTEREST() {
-		return NULL;
+		return .15;
 	}
 };
 
@@ -124,16 +123,16 @@ public:
 	Senior(std::string name, std::string address, std::string telephone, int age, std::string cust_type, std::string account_type) :Customer(name, address, telephone, age, cust_type, account_type) {}
 	
 	double CHECKING_INTEREST() {
-		return NULL;
+		return .06;
 	}
 	double CHECK_CHARGE() {
-		return NULL;
+		return 2.0;
 	}
 	double OVERDRAFT_PENALTY() {
-		return NULL;
+		return 1.0;
 	}
 	double SAVINGS_INTEREST() {
-		return NULL;
+		return .1;
 	}
 };
 

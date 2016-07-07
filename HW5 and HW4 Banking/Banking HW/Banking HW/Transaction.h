@@ -23,6 +23,7 @@ public:
 		this->fees = fees;
 	}
 
+
 	std::string process_tran()
 	{
 		std::stringstream ss;
