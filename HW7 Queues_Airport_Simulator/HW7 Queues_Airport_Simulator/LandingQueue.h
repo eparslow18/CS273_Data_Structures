@@ -42,7 +42,7 @@ public:
 		*/
 
 		if (my_random.next_double() < arrival_rate) {
-			the_queue.push(&Plane(clock)); //adding to a queue of pointers so use &
+			the_queue.push(new Plane(clock)); //adding to a queue of pointers so use &
 											//if the random number generated is less than the arrival rate between 0.0 and 1.0 push onto the queue. There is a arrival_rate #
 		}									//percent possiblity of the random number being less than the arrival rate. For example; if the arrival rate is .3, the random number 
 											// that is generated has a 30% of being lower than the arrival rate

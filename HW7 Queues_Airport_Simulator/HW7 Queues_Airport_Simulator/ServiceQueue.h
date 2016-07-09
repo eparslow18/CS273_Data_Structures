@@ -87,12 +87,13 @@ public:
 				while (randNum < min_service_time); //while the random number is greater than the min service time 
 				
 				plane->service_time = randNum; //the amount of time the plane will take to be serviced 
+				the_queue.push(plane);
 			}
 				 
 
 				// FIXME: add the plane to the service queue
-				the_queue.push(); 
-
+			
+			 
 			}
 		}
 	
