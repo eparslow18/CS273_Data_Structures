@@ -68,7 +68,7 @@ bool PlaceQueen(int column) {
 			//// FIXME: Check if this row has already been assigned
 			//        If RowPlacement[row] is not UNASSIGN_VALUE, we want to move to the next row
 			if (RowPlacement[row] != UNASSIGN_VALUE) {//if value doesnt work, try again going to start of for loop
-				row++;
+				continue;
 			}
 
 			// Check if assigning a column queen to this row is valid
