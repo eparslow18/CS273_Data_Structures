@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="5ebd2409-462f-441a-80fb-6d8173097e91" name="Hospital_Simulator" linkedPackageId="9650fd71-ac0a-4588-a7c2-e0ffff5edd79" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="290e27b5-41d7-4e9d-8a8b-9f7123dfa264">
+      <profileInstance Id="695065ac-b496-4826-b03a-87cf05983c63" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="b07cb8cf-2376-4188-a7a1-8875a876eddb">
+      <profileInstance Id="03d58e8f-dbea-4c18-9be9-312a7b9b364a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0bd6e0f4-1f40-45e3-96a4-964c54ce6c20" name="Caregiver" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="268c6630-ba13-4af7-ad2f-95587ea90580" />
+        <ownedAttributesInternal>
+          <property Id="301f2c10-8cbf-49e4-8385-cf0b68bcafed" name="int treatmentTime" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="11b4b490-7be0-408b-b142-25b29a8d01ae" />
+          </property>
+          <property Id="cbc5847e-7a83-4a12-bfe6-3066ed6fdb68" name="string sirName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b7d85acc-86c1-4860-9ece-17e5a9411446" />
+          </property>
+          <property Id="b54b8d00-2642-460b-9b59-a637bb6468f0" name="Hospital *seattleGreys" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1b05f1f6-9443-49b3-b583-266f6df9b3d9" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d774fc71-5ba9-4bd4-9a8b-ec0ddb9f6b56" name="virtual treatPatient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4d3949d0-2aca-44c4-a2a6-3ab87c10e651" />
+          </operation>
+          <operation Id="2a8b8607-5291-40e8-8544-9850000fe167" name="virtual void setTreamentTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7c9e8265-b182-498b-a08b-94cc83c8f366" />
+          </operation>
+          <operation Id="769f83c1-284d-4a0e-b22b-5f979676a142" name="int getTreatmentTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8b6c9bc3-279e-405c-b4fd-ca135dcc13af" />
+          </operation>
+          <operation Id="f71c247b-e094-429e-aa9a-187b6e6875c1" name="Caregiver" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e5d0635e-3634-498b-ae3e-71238c9d6009" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fa091b4f-c04f-46a4-be48-c3969cafc975" name="Doctor " isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="969a6a0e-cf67-4c34-b1cb-3cd68ac18e43" />
+        <generalsInternal>
+          <generalization Id="fff198ff-4313-441d-bf2e-1237af1b974b" isSubstitutable="false">
+            <classMoniker Id="0bd6e0f4-1f40-45e3-96a4-964c54ce6c20" LastKnownName="Caregiver" />
+            <elementDefinition Id="3899d476-3def-4521-af57-cfe6a83ae21a" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="5ae5c9c5-de11-4c00-b5a9-10a1d369c1d5" isDerived="false" sourceEndRoleName="Doctor " targetEndRoleName="Patient" isLeaf="false" isAbstract="false">
+            <classMoniker Id="11cd6a4c-452e-4221-b793-bf7b6c48477b" LastKnownName="Patient" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="13b423e5-5210-487e-9964-c414ef0eea11" name="Doctor " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="068207ad-907c-45d6-b806-964a5c15cdf2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8f71d42e-b017-46cd-8ad3-d3dceef7bf8d" name="Patient" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="48596de6-c905-41c4-9fbf-95606601116f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="522ca052-de37-41d6-a975-8d9c4779ff4c" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="2ed4e300-8b88-4d8a-adf8-c2ce22b92329" name="Patient patient" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="736c7d36-6da4-4a20-b97c-7fa9848a4a50" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="524708f2-90e8-40d0-807b-95d7f29cfb84" name="treatPatient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cd4465d1-68f3-4a73-a3d2-5bf718c1c00f" />
+          </operation>
+          <operation Id="5f2f36fa-ca2d-4f98-8b42-9e1a5c4a50cf" name="int getTreatmentTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="04128c2c-7e64-443a-b43c-76ae89fe5871" />
+          </operation>
+          <operation Id="50853ce5-1d2d-4293-8cc2-77bd491ca7aa" name="void setTreatmentTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9e8e12c2-6655-4f3c-9f4f-98581e779425" />
+          </operation>
+          <operation Id="7ee5035d-a763-48dd-a65d-84d7e95ca857" name="Doctor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="87ce5b7d-a743-47eb-b9a4-8012c700b3e2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="741d0ed3-c983-451a-b857-15fc5caf6a31" direction="Return" isUnique="false">
+                  <elementDefinition Id="d19673ea-9a42-4831-a433-0936d30df456" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d995e223-9975-4a9a-a823-ad1cefa037cc" LastKnownName="Cargiver" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="04f22771-eddb-4812-94ab-62229493306c" name="Nurse" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8a2535ef-b30a-4acc-a0e6-9ade0f30e9a7" />
+        <generalsInternal>
+          <generalization Id="edd75a8b-5d78-4414-b6cd-68728eddc4e5" isSubstitutable="false">
+            <classMoniker Id="0bd6e0f4-1f40-45e3-96a4-964c54ce6c20" LastKnownName="Caregiver" />
+            <elementDefinition Id="df175c97-248d-4fa1-8165-5c63158845c0" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="42fdd2d6-44ce-42d7-bcd2-14fe4a16eafb" isDerived="false" sourceEndRoleName="Nurse" targetEndRoleName="Patient" isLeaf="false" isAbstract="false">
+            <classMoniker Id="11cd6a4c-452e-4221-b793-bf7b6c48477b" LastKnownName="Patient" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5db119c8-2ff1-4366-ab90-d993a2f4c161" name="Nurse" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c4fa22c6-a135-4c98-84bd-71c0ec2773ad" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6ef25f7b-75be-4746-a9e2-8f23b9931aa8" name="Patient" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="7b10833b-a630-4867-b45f-d7cf10838df0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3386039d-d54e-40c4-96b0-61c84f7f4029" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="93fa58a2-e0d8-4138-ad71-67af52b46120" name="Patient patient" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="18a50a08-ff89-4fcb-9a67-5b37c1f545e9" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="184a2c9c-1305-4c6b-8662-5c302d5911dc" name="treatPatient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c3b06ec4-68eb-4860-a04f-159e5e1570df" />
+          </operation>
+          <operation Id="f5b4ec00-da48-42c9-a3a7-0ffe20680f1f" name="int getTreatmentTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9b426b5a-f7eb-4032-9150-762cfdcce876" />
+          </operation>
+          <operation Id="8f875d86-56df-46a5-bf37-8504295693e6" name="void setTreatmentTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cfade8a5-ace8-4a5b-9693-1089761a5c4e" />
+          </operation>
+          <operation Id="2fecb400-c9a5-4990-8ed1-3d0c28a49c83" name="Nurse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="28bfc0da-6dab-4b91-a52d-14552db25585" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="92a0ff85-c61d-4f92-8235-ed40ad045bbe" direction="Return" isUnique="false">
+                  <elementDefinition Id="751fabf9-775a-4154-b271-2a7edab42d0c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4388d66c-4fbc-41f1-ae32-4a002fa5da9f" LastKnownName="Caregiver" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="290c6335-d5a6-4bfd-b0ca-525831245a7e" name="Random" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c95f4739-053d-4363-94de-ad44bfcb9c26" />
+        <ownedAttributesInternal>
+          <property Id="de25acad-265f-44ce-8ed2-2dd0d749347c" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3c7d984e-3c77-4498-88e7-25017c23bb4f" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="48ab87e0-6db6-4ab3-991e-d27508bc38c9" name="Random" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f6818416-eb77-416f-bef7-603f7072cfc4" />
+          </operation>
+          <operation Id="d18ac11a-5910-4d77-bb97-6d9a9c73ef74" name="int next_int" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3e2faa1c-ac88-4490-9724-a39510d73ce7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b692b26a-f6b9-4fed-bf62-08b2bff36455" name="int n" direction="In" isUnique="false">
+                  <elementDefinition Id="f4dd1f15-8416-41c3-9cf6-d24d6d2b2dc5" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="683ec21e-da8c-4ab2-ab8b-90c98d86de92" name="Hospital " isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="afdcc5eb-0e16-41c9-82b9-f3c3d979b0aa" />
+        <targetEnds>
+          <association Id="593abaa9-0e6d-42cf-9c57-a5c4a5397841" isDerived="false" sourceEndRoleName="Hospital " targetEndRoleName="Caregiver" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0bd6e0f4-1f40-45e3-96a4-964c54ce6c20" LastKnownName="Caregiver" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7e4a212a-20e6-45ce-b7f6-963ae2270c39" name="Hospital " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="97f137d2-ea91-401d-a826-4b82daae0dc1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2a979d4d-1624-4a16-a57e-7a6422506dfc" name="Caregiver" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="48b1efa3-fd79-431f-9633-c010e79a6f62" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8b76f5be-78b1-4a5c-8789-73ec83888edb" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="2279c07c-c217-4bc2-94c8-88f092301407" name="int numOfDoctors" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8d01fdc2-e27c-493d-8f28-e94ebf7786bf" />
+          </property>
+          <property Id="44a7cd6d-9148-4a51-893e-d720b4aa7f1f" name="int numOfPatientsPerHour" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a2bede17-265c-40cc-bca6-41d885320711" />
+          </property>
+          <property Id="8d9092fb-1020-4f10-8867-695f8bcc135f" name="int numOfNurses" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c20c1fb0-1da0-42a2-89e8-a4c565a2131d" />
+          </property>
+          <property Id="6b79fd67-539c-4eb9-90d5-5f6dbee84013" name="int oneWeeksTime" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7250d36e-a569-42dd-857d-7929b2239d56" />
+          </property>
+          <property Id="2ed14d77-9836-4fe1-a69b-73a3d13944f0" name="int clock" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a8cd0f14-140b-4687-bcbe-98733c778676" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="84c8a26f-200c-4045-b764-3a86bfa26739" name="int getNumOfDoctors" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b4d34fb7-ecc7-4d58-b633-11dd227ae06a" />
+          </operation>
+          <operation Id="3330c452-7fb0-4cc5-971f-0d9612d09338" name="int getNumOfNurses" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e6b3f0db-8483-4bad-aaaa-4e642017d047" />
+          </operation>
+          <operation Id="332fbd72-c333-4a7f-bce6-a64b2de79f6c" name="int getNumOfPatientsPerHour" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7f05598b-9974-4131-92be-f63d664fd7d3" />
+          </operation>
+          <operation Id="7288b6e4-e610-479e-b8f6-2bb4f6f818f2" name="void setNumOfDoctors" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ed77dbcd-1c7f-4803-8518-26bce8942249" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a5ef6a45-0c32-4285-808d-007d0996e584" name="int numOfDoctors" direction="In" isUnique="false">
+                  <elementDefinition Id="4e1fee17-9a5b-4a7d-adec-546ab91e8340" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b785ad2e-0cb3-418b-8973-15a067a10e6e" name="void setNumOfNurses" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="93c05dc9-8a52-4391-86e9-b045f0fe293e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c56501ad-07d3-4710-bc9b-9d1d3cf0241b" name="int numOfNurses" direction="In" isUnique="false">
+                  <elementDefinition Id="ff7a391d-d518-41ec-885d-c715a108e791" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a270e01b-b8a8-419c-8da9-32bf76f669af" name="void setNumOfPatientsPerHour" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a0d9d38c-3625-4338-b834-55f11385231a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f166069b-2d76-4a97-a61d-8909f5f7de02" name="int numOfPatientsPerHour" direction="In" isUnique="false">
+                  <elementDefinition Id="fe109070-ae59-47ec-ae11-a8f6f6390239" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="62a4a6e6-3a3a-436f-859d-c23dba6dda08" name="void enterData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ebe5e363-61f2-43d7-8c47-a45ee849e203" />
+          </operation>
+          <operation Id="c55a5739-58e9-4dea-8373-482c74c8dd5f" name="void runSeattleGreysSimulation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7615832f-0b48-4113-ac15-5f6ffdf1c942" />
+          </operation>
+          <operation Id="da1cf6a2-dfb5-4d2b-9161-665466ab9ab8" name="void showStats" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2593f065-5fc9-4c3a-ba07-742c463bbce8" />
+          </operation>
+          <operation Id="08ea4a4d-3886-46a2-abea-261fd4a496a0" name="Hospital" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="167fd6da-a501-4b6f-bb60-873cc20d2f6c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="11cd6a4c-452e-4221-b793-bf7b6c48477b" name="Patient" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="78170ecb-9214-48ca-9e24-b783617716bb" />
+        <targetEnds>
+          <association Id="ba15411f-fb53-4602-8f5f-8c9a54744868" isDerived="false" sourceEndRoleName="Patient" targetEndRoleName="PatientRecords" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0064c169-ef10-4eaf-9d96-0dea650c54b0" LastKnownName="PatientRecords" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="98866847-f511-4e7e-8513-aa9e353d3372" name="Patient" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="39dd3522-e486-4de4-be44-8dbc75c434f7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e4867ac3-64d1-4790-8bd7-c0249786b95e" name="PatientRecords" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="d26e1006-fec2-4d24-9c71-61d0da754076" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="86261acc-1a3e-4f6f-b77d-a07d0d9f07e4" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="e2a36658-07cd-45c4-a73b-96c22cb64133" name="int illnessLevel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a5e436e4-383d-419a-9e0d-55058ed662d0" />
+          </property>
+          <property Id="4e5edb1f-81de-4a5b-a38e-34c475bcf130" name="string firstName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="578bb776-2c75-449a-a3dd-92f71dc2e1a1" />
+          </property>
+          <property Id="9f3dd3bd-1c37-493f-8aff-c3b5a31aec28" name="string sirName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="482d20f7-2bca-4c0e-b0e4-959c9d92cd27" />
+          </property>
+          <property Id="c06bde70-09be-4f2a-826f-717cdc2c5952" name="PatientRecords records" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ed7e3994-81b2-4a7f-93fc-eab01a3193ce" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d35e8c25-6039-4fa0-82a9-d457c718ff9a" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1fa63a68-5a1e-43f3-993e-7bec5b65951b" />
+          </operation>
+          <operation Id="5ac12b56-3056-4ec8-9f76-b96262da8697" name="void setIllnessLevel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2590f918-679c-45c9-8a92-09b1f848fbad" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d88c4198-d40d-41a9-8c29-3c3924fea153" name="int illnessLevel" direction="In" isUnique="false">
+                  <elementDefinition Id="b4149f3b-6a89-4399-94c1-be60a1b99be1" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d4297654-5271-483b-9715-26650d09542a" name="int getIllnessLevel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4c9604d1-2ba1-4b6a-afde-d3103996dd26" />
+          </operation>
+          <operation Id="e93aa886-515d-4811-b0b5-5352c066aea3" name="int getNumOfVisits" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8e6b8701-6c83-4b47-b3aa-3d65441672c0" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0064c169-ef10-4eaf-9d96-0dea650c54b0" name="PatientRecords" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e0edf71b-ce05-41d8-8da6-50b928beaccc" />
+        <ownedOperationsInternal>
+          <operation Id="5b2be0b9-90fb-437e-9c39-c9910664e64e" name="Operation1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b614b674-8622-4cae-92f4-2b49ae9febc4" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="4388d66c-4fbc-41f1-ae32-4a002fa5da9f" name="Caregiver" isAbstract="false" isLeaf="false" cachedFullName="Seattle_Greys::Caregiver">
+        <elementDefinition Id="268c6630-ba13-4af7-ad2f-95587ea90580" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d995e223-9975-4a9a-a823-ad1cefa037cc" name="Cargiver" isAbstract="false" isLeaf="false" cachedFullName="Cargiver">
+        <elementDefinition Id="0fe6273d-44e6-43dc-99e7-810f3cc86a22" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="9650fd71-ac0a-4588-a7c2-e0ffff5edd79" name="Seattle_Greys">
+    <elementDefinition Id="e6945cf8-fb77-4200-9c0d-217d0bd19a63" />
+  </package>
+</logicalClassDesignerModel>
