@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="5ebd2409-462f-441a-80fb-6d8173097e91" name="Hospital_Simulator" linkedPackageId="9650fd71-ac0a-4588-a7c2-e0ffff5edd79" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="290e27b5-41d7-4e9d-8a8b-9f7123dfa264">
-      <profileInstance Id="695065ac-b496-4826-b03a-87cf05983c63" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="b07cb8cf-2376-4188-a7a1-8875a876eddb">
-      <profileInstance Id="03d58e8f-dbea-4c18-9be9-312a7b9b364a" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="0bd6e0f4-1f40-45e3-96a4-964c54ce6c20" name="Caregiver" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -187,7 +173,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="683ec21e-da8c-4ab2-ab8b-90c98d86de92" name="Hospital " isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="683ec21e-da8c-4ab2-ab8b-90c98d86de92" name="EmegrencyRoom" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="afdcc5eb-0e16-41c9-82b9-f3c3d979b0aa" />
         <targetEnds>
           <association Id="593abaa9-0e6d-42cf-9c57-a5c4a5397841" isDerived="false" sourceEndRoleName="Hospital " targetEndRoleName="Caregiver" isLeaf="false" isAbstract="false">
@@ -273,8 +259,46 @@
           <operation Id="da1cf6a2-dfb5-4d2b-9161-665466ab9ab8" name="void showStats" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="2593f065-5fc9-4c3a-ba07-742c463bbce8" />
           </operation>
-          <operation Id="08ea4a4d-3886-46a2-abea-261fd4a496a0" name="Hospital" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="08ea4a4d-3886-46a2-abea-261fd4a496a0" name="EmergencyRoom" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="167fd6da-a501-4b6f-bb60-873cc20d2f6c" />
+          </operation>
+          <operation Id="0daa8576-637a-4021-a943-a5040d706a3c" name="int readInt" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d29d79df-1b20-432e-98f4-fc8e77ebb485" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1344ced0-9367-44f9-8389-9f696b41bfd6" name="string &amp;prompt" direction="In" isUnique="false">
+                  <elementDefinition Id="22da0907-7570-48ab-9dcc-9e9d38ef841f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a47f4e23-4388-4b84-a29d-d36d8460f6c8" name="int low" direction="In" isUnique="false">
+                  <elementDefinition Id="677cba9a-6483-4316-92a0-b78a2da098d6" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bc37292b-fe83-47ff-a1a5-7c0fadc00506" name="int high" direction="In" isUnique="false">
+                  <elementDefinition Id="f368c045-a193-4d6b-a622-df9c8ac64ba1" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2aaffa5a-3ffc-443e-9684-4fed0ea2c31c" name="void  listTreatedPatients" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e3aeab90-d5d7-429a-9c7d-a3a9691d3618" />
+          </operation>
+          <operation Id="8d327dc7-082d-4539-b744-ca0d4f297cad" name="string retrievePatientByName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ca020d69-6085-4c71-91a5-5b5f13f63b2b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ff6b2790-072b-412a-94e9-8bb9b4aeb653" name="string firstName" direction="In" isUnique="false">
+                  <elementDefinition Id="d289e818-ef49-439f-8e9b-58b8923328c6" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="36621e95-f6a9-4cc3-bff3-11f73aef4cdc" name="string sirName" direction="In" isUnique="false">
+                  <elementDefinition Id="54c7fba3-45aa-4aa6-ab65-5fbe370836ca" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -304,20 +328,20 @@
           <property Id="e2a36658-07cd-45c4-a73b-96c22cb64133" name="int illnessLevel" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="a5e436e4-383d-419a-9e0d-55058ed662d0" />
           </property>
-          <property Id="4e5edb1f-81de-4a5b-a38e-34c475bcf130" name="string firstName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="4e5edb1f-81de-4a5b-a38e-34c475bcf130" name="string firstName" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="578bb776-2c75-449a-a3dd-92f71dc2e1a1" />
           </property>
-          <property Id="9f3dd3bd-1c37-493f-8aff-c3b5a31aec28" name="string sirName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="9f3dd3bd-1c37-493f-8aff-c3b5a31aec28" name="string sirName" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="482d20f7-2bca-4c0e-b0e4-959c9d92cd27" />
           </property>
-          <property Id="c06bde70-09be-4f2a-826f-717cdc2c5952" name="PatientRecords records" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="c06bde70-09be-4f2a-826f-717cdc2c5952" name="PatientRecords records" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="ed7e3994-81b2-4a7f-93fc-eab01a3193ce" />
+          </property>
+          <property Id="3ad5e31f-9403-4289-b3f5-4f60b1d645b4" name="int numOfVisitsCounter" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="caf48991-949f-4222-aec0-692dd681dff1" />
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="d35e8c25-6039-4fa0-82a9-d457c718ff9a" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="1fa63a68-5a1e-43f3-993e-7bec5b65951b" />
-          </operation>
           <operation Id="5ac12b56-3056-4ec8-9f76-b96262da8697" name="void setIllnessLevel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="2590f918-679c-45c9-8a92-09b1f848fbad" />
             <ownedParameters>
@@ -334,6 +358,9 @@
           <operation Id="e93aa886-515d-4811-b0b5-5352c066aea3" name="int getNumOfVisits" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="8e6b8701-6c83-4b47-b3aa-3d65441672c0" />
           </operation>
+          <operation Id="dc689a9b-f729-44bf-8f87-278144abffcc" name="Patient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="19dd4227-d20c-45f2-819d-7517e181c375" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -341,8 +368,14 @@
       <class Id="0064c169-ef10-4eaf-9d96-0dea650c54b0" name="PatientRecords" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e0edf71b-ce05-41d8-8da6-50b928beaccc" />
         <ownedOperationsInternal>
-          <operation Id="5b2be0b9-90fb-437e-9c39-c9910664e64e" name="Operation1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="b614b674-8622-4cae-92f4-2b49ae9febc4" />
+          <operation Id="b82ed2ef-e711-436e-8ae6-a2499a685110" name="PatientRecords" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1415eaa3-4045-4d32-abba-1f16475d9e20" />
+          </operation>
+          <operation Id="aa8b08e0-9aac-46e1-a5fb-944b7457a5be" name="addIllnessLevel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0875384-ffbe-43d1-ad0f-5d4a26cc210b" />
+          </operation>
+          <operation Id="f750f075-3dde-479b-8cdd-b2a735397e05" name="addVisit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8f909fd7-db4f-48c6-a1f4-39f56360417f" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -360,5 +393,19 @@
   </packagedElements>
   <package Id="9650fd71-ac0a-4588-a7c2-e0ffff5edd79" name="Seattle_Greys">
     <elementDefinition Id="e6945cf8-fb77-4200-9c0d-217d0bd19a63" />
+    <profileInstances>
+      <packageHasProfileInstances Id="290e27b5-41d7-4e9d-8a8b-9f7123dfa264">
+        <profileInstance Id="695065ac-b496-4826-b03a-87cf05983c63" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="b07cb8cf-2376-4188-a7a1-8875a876eddb">
+        <profileInstance Id="03d58e8f-dbea-4c18-9be9-312a7b9b364a" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

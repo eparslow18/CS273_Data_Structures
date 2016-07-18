@@ -395,7 +395,7 @@
     <packageHasNamedElement>
       <class
         Id="afdcc5eb-0e16-41c9-82b9-f3c3d979b0aa"
-        name="Hospital "
+        name="EmegrencyRoom"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -607,12 +607,77 @@
             isQuery="false" />
           <operation
             Id="167fd6da-a501-4b6f-bb60-873cc20d2f6c"
-            name="Hospital"
+            name="EmergencyRoom"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="d29d79df-1b20-432e-98f4-fc8e77ebb485"
+            name="int readInt"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="22da0907-7570-48ab-9dcc-9e9d38ef841f"
+                  name="string &amp;prompt"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="677cba9a-6483-4316-92a0-b78a2da098d6"
+                  name="int low"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f368c045-a193-4d6b-a622-df9c8ac64ba1"
+                  name="int high"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e3aeab90-d5d7-429a-9c7d-a3a9691d3618"
+            name="void  listTreatedPatients"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ca020d69-6085-4c71-91a5-5b5f13f63b2b"
+            name="string retrievePatientByName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d289e818-ef49-439f-8e9b-58b8923328c6"
+                  name="string firstName"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="54c7fba3-45aa-4aa6-ab65-5fbe370836ca"
+                  name="string sirName"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -680,6 +745,7 @@
           <property
             Id="578bb776-2c75-449a-a3dd-92f71dc2e1a1"
             name="string firstName"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -691,6 +757,7 @@
           <property
             Id="482d20f7-2bca-4c0e-b0e4-959c9d92cd27"
             name="string sirName"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -702,6 +769,18 @@
           <property
             Id="ed7e3994-81b2-4a7f-93fc-eab01a3193ce"
             name="PatientRecords records"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="caf48991-949f-4222-aec0-692dd681dff1"
+            name="int numOfVisitsCounter"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -712,13 +791,6 @@
             isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation
-            Id="1fa63a68-5a1e-43f3-993e-7bec5b65951b"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
           <operation
             Id="2590f918-679c-45c9-8a92-09b1f848fbad"
             name="void setIllnessLevel"
@@ -753,6 +825,14 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="19dd4227-d20c-45f2-819d-7517e181c375"
+            name="Patient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -765,8 +845,24 @@
         isActiveClass="false">
         <ownedOperationsInternal>
           <operation
-            Id="b614b674-8622-4cae-92f4-2b49ae9febc4"
-            name="Operation1"
+            Id="1415eaa3-4045-4d32-abba-1f16475d9e20"
+            name="PatientRecords"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c0875384-ffbe-43d1-ad0f-5d4a26cc210b"
+            name="addIllnessLevel"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8f909fd7-db4f-48c6-a1f4-39f56360417f"
+            name="addVisit"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
