@@ -16,7 +16,9 @@ private:
 
 
 public:
-	AllPatients() {} //no arge constuctor
+	//no arge constuctor
+	AllPatients() {} 
+
 	
 
 	void addPeopleToVector() {
@@ -53,14 +55,24 @@ public:
 	}
 
 
-//getters to get random names 
-	std::string getFirstName(int num) {	
-		return firstNamesVector[num];
-	}
-	std::string getSirName(int num) {
-		return sirNamesVector[num];
-	}
 
+
+//get vectors
+	std::vector<std::string> getFNVector() {
+		return firstNamesVector;}
+
+	void setFNVector(std::vector<string> firstNamesVector) {
+		this->firstNamesVector = firstNamesVector;}
+
+	void setSNVector(std::vector<string> sirNamesVector) {
+		this->sirNamesVector = sirNamesVector;}
+
+	std::vector<std::string> getSNVector() {
+		return sirNamesVector;}
+
+
+
+	friend class EmergencyRoom;
 };
 
 #endif 

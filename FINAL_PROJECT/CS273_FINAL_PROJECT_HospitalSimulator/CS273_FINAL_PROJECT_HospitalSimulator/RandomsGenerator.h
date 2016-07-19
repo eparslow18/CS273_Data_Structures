@@ -15,7 +15,7 @@ struct Random {
 	}
 
 	//return random double for nextInt to utilize
-	int nextDouble() {
+	double nextDouble() {
 		return double(rand()) / RAND_MAX;
 	}
 
@@ -34,7 +34,6 @@ struct Random {
 			priority = rand() % 10 + 1; 
 			return priority;}
 	}
-
 
 
 };

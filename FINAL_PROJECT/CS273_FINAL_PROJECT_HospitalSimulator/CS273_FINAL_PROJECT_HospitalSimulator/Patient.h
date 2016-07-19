@@ -3,7 +3,7 @@
 #include "Doctor.h"
 #include "Nurse.h"
 #include <fstream> 
-#include "PatientRecords.h"
+#include <string>
 
 
 class Patient {
@@ -11,12 +11,12 @@ private:
 	std::string firstName;
 	std::string sirName;
 	
-	PatientRecords records; 
+	 
 	Random randomNum;
 protected:
 	int illnessLevel;
 	int numOfVisitsCounter;
-	int clock;
+	int arrivalTime;
 
 public:
 //no arg constructor 
@@ -27,7 +27,7 @@ public:
 		numOfVisitsCounter = 0;
 		this->firstName = firstName;
 		this->sirName = sirName;
-		this->clock = clock;
+		arrivalTime= clock;
 		this->illnessLevel = illnessLevel;
 	}
 
@@ -36,7 +36,12 @@ public:
 		return illnessLevel;}
 	int getNumOfVisits() {
 		return numOfVisitsCounter;}
+	std::string getFirstName() {
+		return firstName;}
+	std::string getSirName() {
+		return sirName;}
 
+	
 
 
 //setters

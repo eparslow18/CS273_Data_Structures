@@ -11,6 +11,7 @@
 #include "RandomsGenerator.h"
 #include "WaitingRoomQueue.h"
 #include "DischargeQueue.h"
+#include "AllPatients.h"
 
 
 class EmergencyRoom {
@@ -18,22 +19,26 @@ private:
 	int clock;
 	int numOfDoctors;
 	int numOfNurses;
-	int numOfPatientsPerHour;
+	double numOfPatients;
 	int oneWeeksTime;
 
 	WaitingRoomQueue *waitingRoomQueue;
 	DischargeQueue *dischargeQueue;
 	Random randomNum;
+	AllPatients *allPatients;
+
 protected:
 
 public:
 	//no arg constructor
 	EmergencyRoom() { 
 		waitingRoomQueue = new WaitingRoomQueue(); 
+		dischargeQueue = new DischargeQueue();
+		allPatients = new AllPatients();
 		clock = 0;
 		numOfDoctors = -1;
 		numOfNurses = -1;
-		numOfPatientsPerHour = -1;
+		numOfPatients = -1;
 		oneWeeksTime = 10080; //a weeks time in minutes
 	}
 
@@ -43,8 +48,8 @@ public:
 		return numOfDoctors;}
 	int getNumOfNurses() {
 		return numOfNurses;}
-	int getNumOfPatientsPerHour() {
-		return numOfPatientsPerHour;}
+	int getNumOfPatients() {
+		return numOfPatients;}
 
 
 	//setters
@@ -52,8 +57,8 @@ public:
 		this->numOfDoctors = numOfDoctors;}
 	void setNumOfNurses(int numOfNurses) {
 		this->numOfNurses = numOfNurses;}
-	void setNumOfPatientsPerHour(int numOfPatientsPerHour) {
-		this->numOfPatientsPerHour = numOfPatientsPerHour;	}
+	void setNumOfPatients(double numOfPatients) {
+		this->numOfPatients = numOfPatients;	}
 
 
 	//exception handling
@@ -84,19 +89,26 @@ public:
 
 	//asking the user to input their desired hospital simulation numbers
 	void enterData() {
+		allPatients->addPeopleToVector();
 		std::cout << "Welcome to Seattle Greys Emergency Room located in CS273ville. We are a small hosital with a big heart <3.\n"<<std::endl;
-
-		numOfPatientsPerHour = readInt("How many patients are arriving at Seattle Greys per hour?: ", 0, 60); //max of 60 patients per hour FIX THE 60!!! if error
+		numOfPatients = readInt("How many patients are arriving at Seattle Greys per hour?: ", 0, 60); //max of 60 patients per hour FIX THE 60!!! if error
 		numOfDoctors = readInt("How many McDreamys and McSteamys will be on staff?: ", 0, 100); //max of 100 doctors in a week
 		numOfNurses = readInt("How many nurses will be on staff?: ", 0, 100); //max of 100 nurses in a week
+		double numOfPatientsPerHour = numOfPatients / 60;
+		//set number of patients per hour 
+		waitingRoomQueue->setNumPatientsPerHour(numOfPatientsPerHour);
+		std::cout <<" ------------------  " << waitingRoomQueue->getP() << std::endl;
+		waitingRoomQueue->setDischargeQueue(dischargeQueue);
+		waitingRoomQueue->setFNVector(allPatients->getFNVector());
+		waitingRoomQueue->setSNVector(allPatients->getSNVector());
 	}
 
 
 	//run simulator
 	void runGreysAnatomySimulation() {
 		for (clock; clock < oneWeeksTime; clock++) { //for loop a weeks time 
-			waitingRoomQueue->addToQueue(clock);
-			dischargeQueue->removeFromQueue(clock);
+			waitingRoomQueue->addToQueue(clock);//add new patient to queue if randomly chosen to 
+			//dischargeQueue->removeFromQueue(clock);
 		}
 	}
 
@@ -146,6 +158,7 @@ public:
 	//retrieve patient record information using a map
 	void retievePatientByName(std::string sirName) {}
 		//display full name and patient records: illness levels, num of visits,
+
 };
 
 #endif

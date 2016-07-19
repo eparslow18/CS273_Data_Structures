@@ -10,9 +10,8 @@ EmergencyRoom seattleGreys;
 AllPatients allPatients;
 
 int main() {
-	allPatients.addPeopleToVector();
 	seattleGreys.enterData();
-	//seattleGreys.runGreysAnatomySimulation();
+	seattleGreys.runGreysAnatomySimulation();
 	seattleGreys.showStats();
 	return 0;
 }
