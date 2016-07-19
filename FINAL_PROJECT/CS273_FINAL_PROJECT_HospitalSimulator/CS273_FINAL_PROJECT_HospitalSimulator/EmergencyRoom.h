@@ -5,11 +5,12 @@
 #include <vector>
 #include <ctime>
 #include <cstdlib>
-#include <queue>
+#include <queue> //priority_queue
 #include <limits>
 #include <stdexcept>
 #include "RandomsGenerator.h"
-Random randomNum;
+#include "WaitingRoomQueue.h"
+#include "DischargeQueue.h"
 
 
 class EmergencyRoom {
@@ -20,11 +21,15 @@ private:
 	int numOfPatientsPerHour;
 	int oneWeeksTime;
 
+	WaitingRoomQueue *waitingRoomQueue;
+	DischargeQueue *dischargeQueue;
+	Random randomNum;
 protected:
 
 public:
 	//no arg constructor
 	EmergencyRoom() { 
+		waitingRoomQueue = new WaitingRoomQueue(); 
 		clock = 0;
 		numOfDoctors = -1;
 		numOfNurses = -1;
@@ -90,7 +95,8 @@ public:
 	//run simulator
 	void runGreysAnatomySimulation() {
 		for (clock; clock < oneWeeksTime; clock++) { //for loop a weeks time 
-
+			waitingRoomQueue->addToQueue(clock);
+			dischargeQueue->removeFromQueue(clock);
 		}
 	}
 
@@ -138,7 +144,7 @@ public:
 
 
 	//retrieve patient record information using a map
-	void retievePatientByName(std::string sirName) {
+	void retievePatientByName(std::string sirName) {}
 		//display full name and patient records: illness levels, num of visits,
 };
 

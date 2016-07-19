@@ -44,5 +44,11 @@
     <ClInclude Include="AllPatients.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DischargeQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitingRoomQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

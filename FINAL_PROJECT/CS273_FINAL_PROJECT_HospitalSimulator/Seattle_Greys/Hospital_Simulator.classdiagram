@@ -390,6 +390,27 @@
         <elementDefinition Id="0fe6273d-44e6-43dc-99e7-810f3cc86a22" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b9781bdc-056e-4935-a04c-d4ec3c26b4e1" name="AllPatients" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f7413c3f-f851-4a96-b4b8-c15adab9ef3b" />
+        <ownedAttributesInternal>
+          <property Id="4db5d1b8-7a4c-44ac-9d7d-700a6a26d90e" name="vector&lt;string&gt; firstNamesVector" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="352c1199-cd03-40d0-94c9-15b29e606f9c" />
+          </property>
+          <property Id="2304b2e6-ea7a-4d6e-ab55-05c560cffff8" name="vector&lt;string&gt; sirNamesVector" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="64720c64-b913-4f96-88f4-0c8558f75ea0" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="15274c98-f6d1-4aac-a0ff-7f24a68f2d4e" name="AllPatients" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="012d2586-1318-415a-8453-7dfc9e188270" />
+          </operation>
+          <operation Id="fa68464f-88a4-4fa0-a2f3-7925bc264c06" name="void addPeopleToVector" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a0360f4a-4508-4c20-b781-4ad37f0c83ef" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="9650fd71-ac0a-4588-a7c2-e0ffff5edd79" name="Seattle_Greys">
     <elementDefinition Id="e6945cf8-fb77-4200-9c0d-217d0bd19a63" />

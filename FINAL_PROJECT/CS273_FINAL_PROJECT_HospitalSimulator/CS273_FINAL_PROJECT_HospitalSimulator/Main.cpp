@@ -5,10 +5,12 @@
 //Greys Anatomy Emergency Room Simulator 
 
 #include "EmergencyRoom.h"
-
+#include "AllPatients.h"
 EmergencyRoom seattleGreys;
+AllPatients allPatients;
 
 int main() {
+	allPatients.addPeopleToVector();
 	seattleGreys.enterData();
 	//seattleGreys.runGreysAnatomySimulation();
 	seattleGreys.showStats();
