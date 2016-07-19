@@ -411,6 +411,47 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6c839394-b162-4bc5-8336-567ab47b8c61" name="WaitingRoomQueue" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eff8beab-3189-4cd6-94b5-246dc60f14de" />
+        <ownedAttributesInternal>
+          <property Id="7c3e2df1-639e-4f68-a1d8-cb9412d2fb4d" name="priority_queue&lt;Patient *&gt; waitingRoomQueue" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c19258eb-9dc2-4867-b29e-61bc76fd4f93" />
+          </property>
+          <property Id="ed53b334-28ca-478f-b2b8-794bef471f3b" name="double patientsPerHour" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="acfa3a16-230c-4483-9727-43975c40ce72" />
+          </property>
+          <property Id="35aa7181-059d-4098-a1e1-1c3ee723c735" name="Random randomNum" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="34740ba8-1cdf-4414-ad51-391086959601" />
+          </property>
+          <property Id="6ef3cc0b-a0c2-4bc7-b8d7-7a540551865a" name="AllPatients aP" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6e2c6ad2-70a9-440d-97fb-11e339f32c07" />
+          </property>
+          <property Id="5b7c7fbb-ecd1-41c2-a014-cee766438f9e" name="Patient P" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f1341397-6cc0-4d79-9720-6f73a4df33fa" />
+          </property>
+          <property Id="f26774e0-d869-4489-a42d-9b3821a0881e" name="DischargeQueue *dischargeQueue" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="95caad5e-6d58-4b01-be00-4fbeb6b63184" />
+          </property>
+          <property Id="aff5c52e-7322-400a-b19f-c248eac4dabd" name="vector&lt;string&gt; firstNamesVector" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a5455ab9-dc33-492b-8427-8d810fcd3eda" />
+          </property>
+          <property Id="745547f2-e713-4e1c-9895-a880b96c11bf" name="vector&lt;string&gt; sirNamesVector" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0e5c4c2f-0877-43af-a1ed-a60913a7a0c0" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="7d75bc39-46f9-48cc-bf4f-beb550159f5d" name="void" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="42e73b9b-d907-4a53-9420-210353c270f4" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d2ec8720-1159-4694-b4b7-6d4e96485659" name="DepartureQueue" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0e287770-bcb6-4260-b7f9-a42a0d55fb0b" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="9650fd71-ac0a-4588-a7c2-e0ffff5edd79" name="Seattle_Greys">
     <elementDefinition Id="e6945cf8-fb77-4200-9c0d-217d0bd19a63" />

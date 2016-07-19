@@ -66,6 +66,6 @@ public:
 	}
 
 
-	friend class DischargeQueue;
+	friend class TreatmentQueue;
 };
 #endif

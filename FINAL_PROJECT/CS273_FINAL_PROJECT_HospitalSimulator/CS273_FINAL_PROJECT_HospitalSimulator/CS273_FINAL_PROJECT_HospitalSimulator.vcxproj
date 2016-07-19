@@ -154,6 +154,7 @@
     <ClInclude Include="Patient.h" />
     <ClInclude Include="PatientRecords.h" />
     <ClInclude Include="RandomsGenerator.h" />
+    <ClInclude Include="TreatmentQueue.h" />
     <ClInclude Include="WaitingRoomQueue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

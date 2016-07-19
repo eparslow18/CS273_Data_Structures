@@ -2,7 +2,11 @@
 #define DOCTOR_H_
 #include "Caregiver.h"
 
-class Doctor {
+class Doctor: public Caregiver {
+private:
+
+public:
+
 
 };
 

@@ -8,6 +8,9 @@ struct Random {
 		srand((unsigned int)std::time(0));
 	}
 
+	Random(int seed) {
+		srand(seed);
+	}
 
 	//returns a random integer used for patient probability of walking in 
 	int nextInt(int n) {

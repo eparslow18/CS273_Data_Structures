@@ -12,6 +12,7 @@
 #include "WaitingRoomQueue.h"
 #include "DischargeQueue.h"
 #include "AllPatients.h"
+#inlcude "TreatmentQueue.h"
 
 
 class EmergencyRoom {
@@ -24,6 +25,7 @@ private:
 
 	WaitingRoomQueue *waitingRoomQueue;
 	DischargeQueue *dischargeQueue;
+	TreatmentQueue *treatmentQueue;
 	Random randomNum;
 	AllPatients *allPatients;
 
@@ -35,6 +37,7 @@ public:
 		waitingRoomQueue = new WaitingRoomQueue(); 
 		dischargeQueue = new DischargeQueue();
 		allPatients = new AllPatients();
+		treatmentQueue - new TreatmentQueue();
 		clock = 0;
 		numOfDoctors = -1;
 		numOfNurses = -1;
@@ -101,6 +104,8 @@ public:
 		waitingRoomQueue->setDischargeQueue(dischargeQueue);
 		waitingRoomQueue->setFNVector(allPatients->getFNVector());
 		waitingRoomQueue->setSNVector(allPatients->getSNVector());
+
+
 	}
 
 

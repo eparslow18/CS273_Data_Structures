@@ -3,6 +3,10 @@
 #include "EmergencyRoom.h"
 
 class Caregiver {
+private: 
+
+
+public: 
 
 };
 

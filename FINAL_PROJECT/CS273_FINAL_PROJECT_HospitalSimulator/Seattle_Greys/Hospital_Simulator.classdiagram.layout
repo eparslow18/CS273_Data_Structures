@@ -106,5 +106,19 @@
         <OperationElementListCompartment Id="130ffe02-6046-441c-a920-0fc559f71ac2" absoluteBounds="8.64, 6.921484357615312, 2.4699999999999998, 0.52148435761531187" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="5b4fbaab-b433-470d-b37f-fce4910147cf" absoluteBounds="5.125, 5.75, 3, 2.3437499403953552" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="6c839394-b162-4bc5-8336-567ab47b8c61" LastKnownName="WaitingRoomQueue" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="26ce1858-a43b-406b-91bd-4c5c0204da2f" absoluteBounds="5.14, 6.14, 2.9699999999999998, 1.4824218278129895" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="d082ce1d-27f4-400c-861a-79d662275b1e" absoluteBounds="5.14, 7.63242182781299, 2.9699999999999998, 0.36132811258236563" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3cf34982-75c3-4d64-85b3-5ac6365d3257" absoluteBounds="3, 5.625, 1.875, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="d2ec8720-1159-4694-b4b7-6d4e96485659" LastKnownName="DepartureQueue" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="429c08ba-0627-4ac1-bdb1-aff2d47b953a" absoluteBounds="3.015, 6.015, 1.8450000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="4b696758-a365-47b4-aad8-b9a421ee3ece" absoluteBounds="3.015, 6.22617186754942, 1.8450000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>
