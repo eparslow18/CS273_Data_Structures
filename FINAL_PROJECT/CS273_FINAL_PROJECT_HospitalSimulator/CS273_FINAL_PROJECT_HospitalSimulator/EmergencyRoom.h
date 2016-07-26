@@ -12,7 +12,7 @@
 #include "WaitingRoomQueue.h"
 #include "DischargeQueue.h"
 #include "AllPatients.h"
-#inlcude "TreatmentQueue.h"
+#include "TreatmentQueue.h"
 
 
 class EmergencyRoom {
@@ -37,7 +37,7 @@ public:
 		waitingRoomQueue = new WaitingRoomQueue(); 
 		dischargeQueue = new DischargeQueue();
 		allPatients = new AllPatients();
-		treatmentQueue - new TreatmentQueue();
+		treatmentQueue = new TreatmentQueue();
 		clock = 0;
 		numOfDoctors = -1;
 		numOfNurses = -1;
@@ -61,7 +61,7 @@ public:
 	void setNumOfNurses(int numOfNurses) {
 		this->numOfNurses = numOfNurses;}
 	void setNumOfPatients(double numOfPatients) {
-		this->numOfPatients = numOfPatients;	}
+		this->numOfPatients = numOfPatients;}
 
 
 	//exception handling
@@ -94,10 +94,10 @@ public:
 	void enterData() {
 		allPatients->addPeopleToVector();
 		std::cout << "Welcome to Seattle Greys Emergency Room located in CS273ville. We are a small hosital with a big heart <3.\n"<<std::endl;
-		numOfPatients = readInt("How many patients are arriving at Seattle Greys per hour?: ", 0, 60); //max of 60 patients per hour FIX THE 60!!! if error
-		numOfDoctors = readInt("How many McDreamys and McSteamys will be on staff?: ", 0, 100); //max of 100 doctors in a week
-		numOfNurses = readInt("How many nurses will be on staff?: ", 0, 100); //max of 100 nurses in a week
-		double numOfPatientsPerHour = numOfPatients / 60;
+		numOfPatients = readInt("How many patients are arriving at Seattle Greys per hour?: ", 1, 60); //max of 60 patients per hour FIX THE 60!!! if error
+		numOfDoctors = readInt("How many McDreamys and McSteamys will be on staff?: ", 1, 100); //max of 100 doctors in a week
+		numOfNurses = readInt("How many nurses will be on staff?: ", 1, 100); //max of 100 nurses in a week
+		double numOfPatientsPerHour = numOfPatients / 60.0;
 		//set number of patients per hour 
 		waitingRoomQueue->setNumPatientsPerHour(numOfPatientsPerHour);
 		std::cout <<" ------------------  " << waitingRoomQueue->getP() << std::endl;
@@ -111,8 +111,9 @@ public:
 
 	//run simulator
 	void runGreysAnatomySimulation() {
-		for (clock; clock < oneWeeksTime; clock++) { //for loop a weeks time 
+		while(clock < oneWeeksTime) {//loop a weeks time in seconds 
 			waitingRoomQueue->addToQueue(clock);//add new patient to queue if randomly chosen to 
+			clock++;
 			//dischargeQueue->removeFromQueue(clock);
 		}
 	}

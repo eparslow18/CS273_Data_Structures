@@ -29,6 +29,8 @@ public:
 		this->sirName = sirName;
 		arrivalTime= clock;
 		this->illnessLevel = illnessLevel;
+
+		//std::cout << "WE MADE A NEW PATIENT" << std::endl;
 	}
 
 //getters

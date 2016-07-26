@@ -47,14 +47,14 @@ public:
 
 //add a new patient to queue
 	void addToQueue(int clock) {
-		int num = rand() % 300+1; //to get a random person with same first and last name 
+		
 		//std::cout << "Ndouble: --------" << randomNum.nextDouble() << "\n\nPatients: " << patientsPerHour << std::endl;
-		if (randomNum.nextDouble() < patientsPerHour) {//randomly adding patients when the clock determines so
+		if (randomNum.nextDouble() < patientsPerHour) {//randomly adding patients when the clock determines so		
+			int num = rand() % 2000; //to get a random person with same first and last name 
 			waitingRoomQueue.push(new Patient(clock, getFirstName(num), getSirName(num), p.setIllnessLevel()));
 			//creating a patient with a first and sir name at the same place in each vector
-			std::cout << getFirstName(num);
+			std::cout << getFirstName(num) << " " << clock << " " << getSirName(num) << std::endl;
 		}
-		std::cout << waitingRoomQueue.size() << std::endl;
 	}
 
 	//getters to get random names 
