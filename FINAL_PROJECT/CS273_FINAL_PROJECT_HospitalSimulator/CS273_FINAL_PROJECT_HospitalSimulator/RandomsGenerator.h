@@ -5,12 +5,12 @@
 
 struct Random {
 	Random() { // no arg constructor 
-		srand((unsigned int)std::time(0));
+		srand((unsigned int)std::time(NULL));
 	}
 
-	Random(int seed) {
-		srand(seed);
-	}
+	//Random(int seed) {
+		//srand(seed);
+	//}
 
 	//returns a random integer used for patient probability of walking in 
 	int nextInt(int n) {
@@ -20,6 +20,10 @@ struct Random {
 	//return random double for nextInt to utilize
 	double nextDouble() {
 		return double(rand()) / RAND_MAX;
+	}
+
+	int randNumto2000() {
+		return rand() % 2000;
 	}
 
 	//return random number between 1 and 20 with specific percentages of probability 

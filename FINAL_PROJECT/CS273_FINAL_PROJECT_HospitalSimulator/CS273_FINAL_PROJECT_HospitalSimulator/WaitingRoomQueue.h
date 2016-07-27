@@ -19,10 +19,10 @@ private:
 	std::vector<std::string> sirNamesVector;
 
 public:
-//no arg constructor 
+	//no arg constructor 
 	WaitingRoomQueue() {}
 
-//set the patients per hour to be used in the queue
+	//set the patients per hour to be used in the queue
 	void setNumPatientsPerHour(double patientsPerHour) {
 		this->patientsPerHour = patientsPerHour;
 	}
@@ -35,7 +35,7 @@ public:
 
 
 
-//passing in the vectors of first names
+	//passing in the vectors of first names
 	void setFNVector(std::vector<string> firstNamesVector) {
 		this->firstNamesVector = firstNamesVector;
 	}
@@ -45,15 +45,18 @@ public:
 
 
 
-//add a new patient to queue
+	//add a new patient to queue
 	void addToQueue(int clock) {
-		
+		//_sleep(1000); have a syncornization error 
 		//std::cout << "Ndouble: --------" << randomNum.nextDouble() << "\n\nPatients: " << patientsPerHour << std::endl;
-		if (randomNum.nextDouble() < patientsPerHour) {//randomly adding patients when the clock determines so		
-			int num = rand() % 2000; //to get a random person with same first and last name 
+		double nextDub = randomNum.nextDouble();
+		std::cout << nextDub << std::endl;
+		if (nextDub < patientsPerHour) {//randomly adding patients when the clock determines so		
+			int num = randomNum.randNumto2000(); //to get a random person with same first and last name 
+			//int num = randomNum.nextInt(2000);
 			waitingRoomQueue.push(new Patient(clock, getFirstName(num), getSirName(num), p.setIllnessLevel()));
 			//creating a patient with a first and sir name at the same place in each vector
-			std::cout << getFirstName(num) << " " << clock << " " << getSirName(num) << std::endl;
+			std::cout << getFirstName(num) << " " << clock << " " << getSirName(num) << " " << num << std::endl;
 		}
 	}
 
@@ -62,7 +65,7 @@ public:
 		return firstNamesVector[num];
 	}
 	std::string getSirName(int num) {
-	return sirNamesVector[num];
+		return sirNamesVector[num];
 	}
 
 
