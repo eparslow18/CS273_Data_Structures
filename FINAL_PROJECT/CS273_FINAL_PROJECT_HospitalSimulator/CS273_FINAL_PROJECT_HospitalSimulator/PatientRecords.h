@@ -1,13 +1,27 @@
 #ifndef PATIENTRECORDS_H_
 #define PATIENTRECORDS_H_
 #include "Patient.h"
+#include <vector>
 
-class PatientRecords {
-private:
+struct PatientRecords {
+ 
+	std::vector<Patient*>records;
+	std::vector<int> illnessPerVisit;
 
-public:
-	PatientRecords() { //no arg constructor
+	//constructpr 
+	PatientRecords() {}
 
+	//contructpr
+	PatientRecords(std::vector<Patient*>records, std::vector<int> illnessPerVisit)
+	{
+		this->records = records;
+		this->illnessPerVisit = illnessPerVisit;
+	}
+
+	//add records 
+	void addRecords(Patient* patient, int illnessLevel) {
+		records.push_back(patient);
+		illnessPerVisit.push_back(illnessLevel);
 	}
 };
 

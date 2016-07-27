@@ -6,31 +6,33 @@
 #include <string>
 
 
-class Patient {
-private:
+struct Patient {
+
+//variables
 	std::string firstName;
-	std::string sirName;
-	
-	 
+	std::string sirName; 
 	Random randomNum;
-protected:
 	int illnessLevel;
 	int numOfVisitsCounter;
 	int arrivalTime;
+	int dischargeTime;
+	int startTreatmentTime;
+	int totalTreatmentTime;
 
-public:
 //no arg constructor 
 	Patient(){}
 
 //constructor 
-	Patient(int clock, std::string firstName, std::string sirName, int illnessLevel) {
+	Patient(int clock, std::string firstName, std::string sirName, int totalTreatmentTime) {
 		numOfVisitsCounter = 0;
 		this->firstName = firstName;
 		this->sirName = sirName;
 		arrivalTime= clock;
+		dischargeTime = -1;
 		this->illnessLevel = illnessLevel;
-
-		//std::cout << "WE MADE A NEW PATIENT" << std::endl;
+		this->startTreatmentTime = -1;
+		this->totalTreatmentTime = totalTreatmentTime;
+		
 	}
 
 //getters
@@ -42,7 +44,12 @@ public:
 		return firstName;}
 	std::string getSirName() {
 		return sirName;}
-
+	int getStartTreatmentTime() {
+		return startTreatmentTime;}
+	int getTotalTreatmentTime() {
+		return totalTreatmentTime;}
+	int getDischargeTime() {
+		return dischargeTime;}
 	
 
 
@@ -50,7 +57,9 @@ public:
 	int setIllnessLevel() { 
 		this->illnessLevel = randomNum.randomIllnessLevel(); //get a random priority number based off of illness level 
 		numOfVisitsCounter++; //a patient will never get assigned an illness level without visiting 
-		return illnessLevel;
+		return illnessLevel;}
+	void setStartTreatmentTime(int startTreatmentTime) {
+		this->startTreatmentTime = startTreatmentTime;
 	}
 
 

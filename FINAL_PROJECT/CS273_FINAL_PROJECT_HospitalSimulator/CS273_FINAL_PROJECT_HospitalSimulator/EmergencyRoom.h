@@ -121,8 +121,8 @@ public:
 	void runGreysAnatomySimulation() {
 		while (clock < oneWeeksTime) {//loop a weeks time in seconds 
 			waitingRoomQueue->addToQueue(clock);//add new patient to queue if randomly chosen to 
-			treatmentQueue->addToQueue(clock);
-			dischargeQueue->removeFromQueue(clock);
+			treatmentQueue->update(clock);
+			dischargeQueue->update(clock);
 			clock++;
 
 		}
