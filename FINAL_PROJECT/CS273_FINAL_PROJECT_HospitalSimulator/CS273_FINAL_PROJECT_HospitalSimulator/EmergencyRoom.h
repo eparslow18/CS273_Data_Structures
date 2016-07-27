@@ -20,7 +20,7 @@ private:
 	int clock;
 	int numOfDoctors;
 	int numOfNurses;
-	double numOfPatients;
+	double numOfPatientsPerHour;
 	int oneWeeksTime;
 
 	WaitingRoomQueue *waitingRoomQueue;
@@ -41,7 +41,7 @@ public:
 		clock = 0;
 		numOfDoctors = -1;
 		numOfNurses = -1;
-		numOfPatients = -1;
+		numOfPatientsPerHour = -1;
 		oneWeeksTime = 10080; //a weeks time in minutes
 	}
 
@@ -53,8 +53,8 @@ public:
 	int getNumOfNurses() {
 		return numOfNurses;
 	}
-	int getNumOfPatients() {
-		return numOfPatients;
+	int getNumOfPatientsPerHour() {
+		return numOfPatientsPerHour;
 	}
 
 
@@ -65,8 +65,8 @@ public:
 	void setNumOfNurses(int numOfNurses) {
 		this->numOfNurses = numOfNurses;
 	}
-	void setNumOfPatients(double numOfPatients) {
-		this->numOfPatients = numOfPatients;
+	void setNumOfPatientsPerHour(double numOfPatientsPerHour) {
+		this->numOfPatientsPerHour = numOfPatientsPerHour;
 	}
 
 
@@ -100,21 +100,22 @@ public:
 
 	//asking the user to input their desired hospital simulation numbers
 	void enterData() {
-		allPatients->addPeopleToVector();
+		this->allPatients->addPeopleToVector();
 		std::cout << "Welcome to Seattle Greys Emergency Room located in CS273ville. We are a small hosital with a big heart <3.\n" << std::endl;
-		numOfPatients = readInt("How many patients are arriving at Seattle Greys per hour?: ", 1, 60); //max of 60 patients per hour FIX THE 60!!! if error
+		numOfPatientsPerHour = readInt("How many patients are arriving at Seattle Greys per hour?: ", 1, 60); //max of 60 patients per hour FIX THE 60!!! if error
 		numOfDoctors = readInt("How many McDreamys and McSteamys will be on staff?: ", 1, 100); //max of 100 doctors in a week
 		numOfNurses = readInt("How many nurses will be on staff?: ", 1, 100); //max of 100 nurses in a week
-		double numOfPatientsPerHour = numOfPatients / 60.0;
+
+
 		//set number of patients per hour 
-		waitingRoomQueue->setNumPatientsPerHour(numOfPatientsPerHour);
+		this->waitingRoomQueue->setNumPatientsPerHour(numOfPatientsPerHour);
 		//std::cout <<" ------------------  " << waitingRoomQueue->getP() << std::endl;
-		waitingRoomQueue->setDischargeQueue(dischargeQueue);
-		waitingRoomQueue->setFNVector(allPatients->getFNVector());
-		waitingRoomQueue->setSNVector(allPatients->getSNVector());
-
-
+		//waitingRoomQueue->setDischargeQueue(dischargeQueue);
+		this->waitingRoomQueue->setFNVector(allPatients->getFNVector());
+		this->waitingRoomQueue->setSNVector(allPatients->getSNVector());
 	}
+
+
 
 
 	//run simulator
@@ -124,9 +125,11 @@ public:
 			treatmentQueue->update(clock);
 			dischargeQueue->update(clock);
 			clock++;
-
 		}
 	}
+
+
+
 
 
 	//show the emergency room stats

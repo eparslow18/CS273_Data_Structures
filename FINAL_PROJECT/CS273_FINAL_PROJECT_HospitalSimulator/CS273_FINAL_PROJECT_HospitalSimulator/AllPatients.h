@@ -6,7 +6,6 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-using namespace std;
 
 
 class AllPatients {
@@ -28,11 +27,11 @@ public:
 
 		//if files wont open throw message 
 		if (firstNames.fail()) {
-			cout << "can't open file" << endl;
+			std::cout << "can't open file" << std::endl;
 			return;
 		}
 		if (sirNames.fail()) {
-			cout << "can't open file" << endl;
+			std::cout << "can't open file" << std::endl;
 			return;
 		}
 
@@ -61,10 +60,10 @@ public:
 	std::vector<std::string> getFNVector() {
 		return firstNamesVector;}
 
-	void setFNVector(std::vector<string> firstNamesVector) {
+	void setFNVector(std::vector<std::string> firstNamesVector) {
 		this->firstNamesVector = firstNamesVector;}
 
-	void setSNVector(std::vector<string> sirNamesVector) {
+	void setSNVector(std::vector<std::string> sirNamesVector) {
 		this->sirNamesVector = sirNamesVector;}
 
 	std::vector<std::string> getSNVector() {

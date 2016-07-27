@@ -1,10 +1,10 @@
 #ifndef DISCHARGEQUEUE_H_
 #define DISCHARGEQUEUE_H_
 #include "WaitingRoomQueue.h"
-#include "TreatmentQueue.h"
+//#include "TreatmentQueue.h"
 #include <queue>
 #include "Patient.h"
-#include "EmergencyRoom.h"
+//#include "EmergencyRoom.h"
 
 class DischargeQueue {
 private:
