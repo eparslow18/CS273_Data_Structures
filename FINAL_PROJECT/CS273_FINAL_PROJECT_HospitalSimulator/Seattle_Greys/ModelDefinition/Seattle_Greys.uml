@@ -64,7 +64,7 @@
         <ownedOperationsInternal>
           <operation
             Id="4d3949d0-2aca-44c4-a2a6-3ab87c10e651"
-            name="virtual treatPatient"
+            name="virtual int getTreatmentTime"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -80,7 +80,7 @@
             isQuery="false" />
           <operation
             Id="8b6c9bc3-279e-405c-b4fd-ca135dcc13af"
-            name="int getTreatmentTime"
+            name="virtual int getNuumOfCaregivers"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -94,6 +94,24 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="24a69f97-e4fc-4c69-9b17-c98939e3ee82"
+            name="virtual void setNumberOfCaregivers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5aa275cd-d99a-427c-99d6-27a86f10d5ea"
+                  name="int numberOfCaregivers("
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -167,19 +185,33 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="deac86d9-2e2d-4cef-94d4-59a8ec304e97"
+            name="int numOfCaregivers"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="fea4b9a6-9b7d-428a-aa4f-8b8cc8e7fa42"
+            name="int treatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="cd4465d1-68f3-4a73-a3d2-5bf718c1c00f"
-            name="treatPatient"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="04128c2c-7e64-443a-b43c-76ae89fe5871"
-            name="int getTreatmentTime"
+            name="int getNuumOfCaregivers"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -217,6 +249,14 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="76a420c9-629a-4c54-ad26-8416955c3bc4"
+            name="void setNumberOfCaregivers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -290,24 +330,30 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="c92fa9d1-60f3-4d32-94c6-74656c9f026d"
+            name="int numOfCargeivers"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4b37850b-3417-4240-921e-a97ebc3dcf39"
+            name="int treatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation
-            Id="c3b06ec4-68eb-4860-a04f-159e5e1570df"
-            name="treatPatient"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="9b426b5a-f7eb-4032-9150-762cfdcce876"
-            name="int getTreatmentTime"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
           <operation
             Id="cfade8a5-ace8-4a5b-9693-1089761a5c4e"
             name="void setTreatmentTime"
@@ -340,13 +386,29 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="cdcd81c9-ef86-47ef-99e3-eb5270be0606"
+            name="int getNumberOfCaregivers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="738cb953-70b3-4503-81a6-62f8265f23e4"
+            name="void setNumberOfCaregivers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="c95f4739-053d-4363-94de-ad44bfcb9c26"
-        name="Random"
+        name="Struct Random"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -389,6 +451,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="9ffdebb8-7f2c-4c22-899e-d39f3d316117"
+            name="Operation1"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="60b07d67-216f-4154-99d4-a7d18b227fbe"
+            name="double nextDouble"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="445b8741-f268-43f4-84dc-1f07c167244d"
+            name="int randomIllnessLevel"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -493,6 +579,50 @@
             Id="a8cd0f14-140b-4687-bcbe-98733c778676"
             name="int clock"
             visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c3c1fbb4-1026-4571-943b-a26e7a8016a4"
+            name="WaitingRoomQueue *waitingRoomQueue"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a30c9686-dfa6-4607-b2cc-34ccae6e3356"
+            name="TreatmentQueue *treatementQueue"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ddf3ef6d-475a-4ca4-be8e-f6c250ed5354"
+            name="Random randomNum"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5f025bf2-59d4-4982-b22f-989a52a7c157"
+            name="AllPatients * allPatients"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -789,6 +919,39 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="a71cf194-7087-4758-9b11-80c7eba35f1f"
+            name="Random randomNum"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="75f2648b-4be4-4723-adae-69c7e43d033f"
+            name="int arrivalTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="629df30d-0ddd-4c95-8c50-1186b553aa8d"
+            name="int totalTreatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -833,6 +996,38 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="521e4ebe-8b38-4438-9d1a-baa4d2dcaf9d"
+            name="string getFirstName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e05795ba-d619-4010-a867-10472f5f5e23"
+            name="string getSirName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1f95e28c-a20c-4d45-b86d-18f67bb8c493"
+            name="int getTotalTreatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b21e2fbf-417b-48e9-8080-ebd7ff7e28d6"
+            name="Patient(int clock, string firstName, string sirName, int totalTreatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -853,16 +1048,16 @@
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="c0875384-ffbe-43d1-ad0f-5d4a26cc210b"
-            name="addIllnessLevel"
+            Id="0bc2f0ea-c112-4438-a38c-fb26f305e4e5"
+            name="addRecords(Patient *patient, int illnessLevel"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="8f909fd7-db4f-48c6-a1f4-39f56360417f"
-            name="addVisit"
+            Id="65847448-54f8-4638-9bbe-2621fd3c3bab"
+            name="PatientRecords(vector&lt;Patient*&gt; records, vector&lt;int&gt; illnessPerVisit"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -924,6 +1119,48 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="314a6985-32c6-4446-adbf-8ee060ab7032"
+            name="vector&lt;string&gt; getFNVector"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4a0af736-27ea-41aa-865d-5cc25c2cc51d"
+            name="vector&lt;string&gt; getSNVector"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2ff202f9-337f-4ff6-986e-8e85e69fe448"
+            name="void setFNVector"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b9b48276-eec9-499d-bdc4-0f18f2ad53b3"
+                  name="vector&lt;string&gt; firstNamesVector"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="08b6a822-a29f-4955-8eed-314e1c7cb169"
+            name="void setSNVector(vector&lt;string&gt; sirNamesVector"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -937,7 +1174,7 @@
         <ownedAttributesInternal>
           <property
             Id="c19258eb-9dc2-4867-b29e-61bc76fd4f93"
-            name="priority_queue&lt;Patient *&gt; waitingRoomQueue"
+            name="queue&lt;Patient *&gt; doctorQueue"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1023,11 +1260,66 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="a62a1b5c-d17f-4c3f-82ce-5e453b5cb798"
+            name="int numOfDoctors"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="444fb944-56aa-43f0-82bc-4e6180ea16fe"
+            name="int numOfNurses"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="827d2fb8-af8f-4124-9d28-88eb57229a46"
+            name="int visitTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2c862400-2278-49d2-9e24-a875c1795383"
+            name="int patientsTreated"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="08c53f61-1177-487d-b7cc-4b8ed9aea9bc"
+            name="queue&lt;Patient *&gt; nurseQueue"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="42e73b9b-d907-4a53-9420-210353c270f4"
-            name="void"
+            name="WaitingRoomQueue"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1040,6 +1332,14 @@
       <class
         Id="0e287770-bcb6-4260-b7f9-a42a0d55fb0b"
         name="DepartureQueue"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d32e7cae-d2b2-4ca3-9cc8-2ce99625589a"
+        name="TreatmentQueue"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />

@@ -9,7 +9,6 @@
 class DischargeQueue {
 private:
 	int dischargeTime;
-	//WaitingRoomQueue *waitingRoomQueue;
 	int visitTime;
 	int patientsTreated;
 	std::queue<Patient *> doctorQueue;

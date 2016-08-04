@@ -6,14 +6,15 @@
 #include "WaitingRoomQueue.h"
 #include "Caregiver.h"
 #include "RandomsGenerator.h"
+#include <iostream>
 
 class TreatmentQueue {
 private:
-	std::priority_queue<Patient *> treatmentQueue;
 	int startTreatmentTime;
 	int totalTreatmentTime;
 	WaitingRoomQueue *waitingRoomQueue;
 	DischargeQueue *dischargeQueue;
+	TreatmentQueue *treatmentQueue;
 	Caregiver *caregiver;
 	std::queue<Patient *> doctorQueue;
 	std::queue<Patient *> nurseQueue;
@@ -43,21 +44,22 @@ public:
 	
 
 	void updateDoctor(int clock) {
-		if (!doctorQueue.empty()) { //of there is a doctor in the queue..
+		if (!doctorQueue.empty()) { //of there is a patietnt in the treatment doctor queue..
 			Patient *patient = doctorQueue.front(); //creat an object that points to the front of the patients queue
 
-			if ((clock - patient->getStartTreatmentTime()) > patient->totalTreatmentTime) { //if there is extra time, pop a doctor from the queue
+			if ((clock - patient->getStartTreatmentTime()) > patient->totalTreatmentTime) { //if there is extra time, pop a patients from the queue
 				doctorQueue.pop();
 				waitingRoomQueue->numberOfDoctors++; //add a dotor to the num of doctors 
 				patient->dischargeTime = clock - patient->startTreatmentTime;
 				dischargeQueue->doctorQueue.push(patient);}
 		}
 
-		//if the doctor queue is empty of there are doctors in the waiting room, bring them into the treatment queue
-		if (doctorQueue.empty() || waitingRoomQueue->numberOfDoctors > 0) {
+		//if the doctor queue is empty of there are patients in the waiting room, bring them into the treatment queue
+		if (waitingRoomQueue->numberOfDoctors >0) {
 			while (!waitingRoomQueue->doctorQueue.empty()) {
 				Patient *patient = waitingRoomQueue->doctorQueue.front();
-				waitingRoomQueue->numberOfDoctors++;
+				waitingRoomQueue->doctorQueue.pop();
+				waitingRoomQueue->numberOfDoctors--;
 				patient->startTreatmentTime = clock;
 				doctorQueue.push(patient);}
 		}
@@ -66,22 +68,23 @@ public:
 
 
 	void updateNurse(int clock) {
-		if (!nurseQueue.empty()) { //of there is a doctor in the queue..
+		if (!nurseQueue.empty()) { //of there is a nurse in the queue..
 			Patient *patient = nurseQueue.front(); //creat an object that points to the front of the patients queue
 
-			if ((clock - patient->getStartTreatmentTime()) > patient->totalTreatmentTime) { //if there is extra time, pop a doctor from the queue
+			if ((clock - patient->getStartTreatmentTime()) > patient->totalTreatmentTime) { //if there is extra time, pop a patient from the queue
 				nurseQueue.pop();
-				waitingRoomQueue->numberOfNurses++; //add a dotor to the num of doctors 
+				waitingRoomQueue->numberOfNurses++; //add a nurse to the num of doctors 
 				patient->dischargeTime = clock - patient->startTreatmentTime;
 				dischargeQueue->nurseQueue.push(patient);
 			}
 		}
 
-		//if the doctor queue is empty of there are doctors in the waiting room, bring them into the treatment queue
-		if (nurseQueue.empty() || waitingRoomQueue->numberOfNurses > 0) {
+		//if the nurse queue is empty of there are patients in the waiting room, bring them into the treatment queue
+		if (waitingRoomQueue->numberOfNurses >0) {
 			while (!waitingRoomQueue->nurseQueue.empty()) {
 				Patient *patient = waitingRoomQueue->nurseQueue.front();
-				waitingRoomQueue->numberOfNurses++;
+				waitingRoomQueue->nurseQueue.pop();
+				waitingRoomQueue->numberOfNurses--;
 				patient->startTreatmentTime = clock;
 				nurseQueue.push(patient);
 			}

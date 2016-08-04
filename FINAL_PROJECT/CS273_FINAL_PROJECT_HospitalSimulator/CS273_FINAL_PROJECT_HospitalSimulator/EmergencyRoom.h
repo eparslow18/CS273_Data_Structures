@@ -13,6 +13,7 @@
 #include "DischargeQueue.h"
 #include "AllPatients.h"
 #include "TreatmentQueue.h"
+#include "PatientRecords.h"
 
 
 class EmergencyRoom {
@@ -28,6 +29,7 @@ private:
 	TreatmentQueue *treatmentQueue;
 	Random randomNum;
 	AllPatients *allPatients;
+	PatientRecords *patientRecords;
 
 protected:
 
@@ -134,8 +136,8 @@ public:
 
 	//show the emergency room stats
 	void showStats() {
-		std::cout << "\nSeattle Greys treated INSERT HERE patients this week.\n";
-		std::cout << "\nThe average visit time was: " << std::endl;
+		std::cout << "\nSeattle Greys treated " << dischargeQueue->getPatientsTreated() << " patients this week.\n";
+		std::cout << "\nThe average visit time was: " << dischargeQueue->getVisitTime() << std::endl;
 		std::cout << std::endl << "Please select from the menu below to view more stats from your Seattle Greys simulation: \n";
 		menu();
 
@@ -149,13 +151,20 @@ public:
 		switch (option % 4) {
 		case 1:
 			// CREAT FUNCTION list treated patients from patient records vector!
-			std::cout << "Create function to list patients!!";
-			listTreatedPatients();
+			std::cout << "Patients Treated: ";
+			patientRecords->listAllPatients(); 
 			menu(); //a little bit of recursion ;) 
 			break;
 		case 2:
 			// CREAT FUNCTION retrieve patient record by name using binary search tree?? 
-			std::cout << "create function to retrieve patient by name!!\n";
+			std::cout << "Please enter the patient's name: ";
+			/*std::string name;
+			std::cin >> name;*/
+			//if (std::find(patientRecords->records.begin(), patientRecords->records.end(), name) != patientRecords->records.end()) {
+			//	std::cout << patientRecords->records.at(name) << std::endl; //search through records to see if name of patient was treated 
+			//}
+			//else
+				std::cout << " Patient name could not be found. \n";
 			menu();
 			break;
 		case 3:
@@ -167,16 +176,6 @@ public:
 		}
 	}
 
-
-	//list treated patients 
-	void listTreatedPatients() {
-
-	}
-
-
-	//retrieve patient record information using a map
-	void retievePatientByName(std::string sirName) {}
-	//display full name and patient records: illness levels, num of visits,
 
 };
 

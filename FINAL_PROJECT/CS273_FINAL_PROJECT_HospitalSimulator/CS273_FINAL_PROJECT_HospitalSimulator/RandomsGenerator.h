@@ -1,7 +1,6 @@
 #ifndef RANDOMGENERATOR_H_
 #define RANDOMGENERATOR_H_
 #include <ctime>
-#include <cstdlib>
 
 struct Random {
 	Random() { // no arg constructor 

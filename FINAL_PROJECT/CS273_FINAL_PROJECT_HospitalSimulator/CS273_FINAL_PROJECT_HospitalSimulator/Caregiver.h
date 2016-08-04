@@ -2,7 +2,7 @@
 #define CAREGIVER_H_
 #include "EmergencyRoom.h"
 
-class Caregiver {
+class Caregiver{
 private: 
 	int numberOfCaregivers;
 	int treatmentTime;

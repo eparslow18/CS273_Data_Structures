@@ -7,6 +7,8 @@
 #include "AllPatients.h"
 //#include "DischargeQueue.h"
 #include "PatientRecords.h"
+#include <vector>
+
 
 class WaitingRoomQueue : public PatientRecords {
 private:
@@ -32,6 +34,8 @@ public:
 	WaitingRoomQueue() {
 		visitTime = 0;
 		patientsTreated = 0;
+		numberOfDoctors = 0;
+		numberOfNurses = 0;
 	}
 
 
@@ -41,9 +45,6 @@ public:
 		this->patientsPerHour = patientsPerHour;}
 	double getP() {
 		return patientsPerHour;}
-	//void setDischargeQueue(DischargeQueue *dischargeQueue) {
-	//	this->dischargeQueue = dischargeQueue;}
-
 
 
 //getters to get random names 
@@ -84,14 +85,14 @@ public:
 				if (illnessLevel > 10 && numberOfDoctors > 0) {
 					doctorQueue.push(new Patient(clock, getFirstName(num), getSirName(num), totalDoctorTreatment));
 
-					addRecords(new Patient(clock, getFirstName(num), getSirName(num), totalDoctorTreatment ), illnessLevel);
+					addRecords(new Patient(clock, getFirstName(num), getSirName(num), totalDoctorTreatment ), getFirstName(num), illnessLevel);
 				}
 			}
 
 				else if (illnessLevel < 11 ){
 					nurseQueue.push(new Patient(clock, getFirstName(num), getSirName(num), totalNurseTreatment));
 
-					addRecords(new Patient(clock, getFirstName(num), getSirName(num), totalNurseTreatment), illnessLevel);
+					addRecords(new Patient(clock, getFirstName(num), getSirName(num), totalNurseTreatment), getFirstName(num), illnessLevel);
 				}
 			}
 
